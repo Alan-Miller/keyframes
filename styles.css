@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --big-color: lightcoral;
+}
+
+html {
+    background-color: seagreen;
+    /* font-size: 16px; */
+}
+/* body {font-size: 16rem} */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+main div {
+    height: 200px;
+    width: 200px;
+}
+
+
+main div.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: seashell;
+    position: relative;
+    top: 0px; 
+    z-index: -1;
+    transition: .5s;
+    transition-delay: top 0s; 
+}
+main div.bottom p {
+    opacity: 0;
+    font-family: sans-serif;
+    color: seagreen;
+    font-size: 2rem;
+}
+
+main div.top.clicked div.bottom {
+    /* animation: .5s menu; */
+    top: 200px;
+}
+main div.top.clicked p {
+    transition: .25s;
+    transition-delay: .25s; 
+    opacity: 1;
+}
+
+
+
+main div.top {
+    background-color: darkseagreen;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 550px) {
+    main div.top {
+        background-color: var(--big-color);
+    }
+
+    main div.bottom p {
+        font-size: 1.5rem;
+    }
+}
